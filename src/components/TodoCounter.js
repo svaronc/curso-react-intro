@@ -1,7 +1,7 @@
-export function TodoCounter() {
+export function TodoCounter({total, completed }) {
   return (
     <h1>
-      has completado 3 de 6 TODOS
+      has completado {completed} de {total} TODOS
     </h1>
   );
 }
