@@ -1,9 +1,8 @@
-import { TodoItem } from "./components/TodoItem";
-import { TodoCounter } from "./components/TodoCounter";
-import { TodoSearch } from "./components/TodoSearch";
-import { TodoList } from "./components/TodoList";
-import { CreateTodoButton } from "./components/CreateTodoButton";
-import "./App.css";
+import { TodoItem } from "./components/TodoItem/TodoItem";
+import { TodoCounter } from "./components/TodoCounter/TodoCounter";
+import { TodoSearch } from "./components/TodoSearch/TodoSearch";
+import { TodoList } from "./components/TodoList/TodoList";
+import { CreateTodoButton } from "./components/CreateTodoButton/CreateTodoButton";
 
 const defaultTodos = [
   {text: 'cortar cebollar', completed: true},
