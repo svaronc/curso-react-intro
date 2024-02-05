@@ -4,24 +4,24 @@ import { AppUi } from "./hooks/AppUi";
 
 function App() {
   const [searchValue, setSeacrhValue] = useState("");
-  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
-  const completedTodos = todos.filter((todo) => !!todo.completed).length;
-  const totalTodos = todos.length;
-  const searchedTodos = todos.filter((todo) => {
+  const { item, saveItem, loading, error } = useLocalStorage("TODOS_V1", []);
+  const completedTodos = item.filter((todo) => !!todo.completed).length;
+  const totalTodos = item.length;
+  const searchedTodos = item.filter((todo) => {
     return todo.text.toLowerCase().includes(searchValue.toLowerCase());
   });
 
   const completeTodo = (text) => {
-    const newTodos = [...todos];
+    const newTodos = [...item];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
     newTodos[todoIndex].completed = true;
-    saveTodos(newTodos);
+    saveItem(newTodos);
   };
   const deleteTodo = (text) => {
-    const newTodos = [...todos];
+    const newTodos = [...item];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
     newTodos.splice(todoIndex, 1);
-    saveTodos(newTodos);
+    saveItem(newTodos);
   };
   return (
     <AppUi
@@ -32,6 +32,8 @@ function App() {
       searchedTodos={searchedTodos}
       completeTodo={completeTodo}
       deleteTodo={deleteTodo}
+      loading={loading}
+      error={error}
     />
   );
 }
