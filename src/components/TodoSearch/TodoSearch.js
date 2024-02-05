@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import './TodoSearch.css'
+import "./TodoSearch.css";
 
-
-export function TodoSearch() {
-  
-  const [searchValue, setSeacrhValue] = useState('');
-  
+export function TodoSearch({ setSeacrhValue, searcValue }) {
   return (
-    <input placeholder="cortar cebolla" className="TodoSearch" onChange={(event) => {
-       console.log(event.target.value); 
-    }}></input>
+    <input
+      placeholder="cortar cebolla"
+      className="TodoSearch"
+      value={searcValue}
+      onChange={(event) => {
+        setSeacrhValue(event.target.value);
+      }}
+    ></input>
   );
 }
-

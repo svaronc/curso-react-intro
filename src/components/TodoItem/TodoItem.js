@@ -1,16 +1,22 @@
-import './TodoItem.css';
+import { FaCheckCircle } from "react-icons/fa";
+import { FaDeleteLeft } from "react-icons/fa6";
 
- export function TodoItem(props) {
+import "./TodoItem.css";
+
+export function TodoItem({ completed, text, onComplete, onDelete }) {
   return (
     <li className="TodoItem">
-      <span className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}>
-        V
+      <span
+        onClick={() => onComplete(text)}
+        className={`Icon Icon-check ${completed && "Icon-check--active"}`}
+      >
+        <FaCheckCircle />
       </span>
-      <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
-        {props.text}
+      <p className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>
+        {text}
       </p>
-      <span className="Icon Icon-delete">
-        X
+      <span onClick={() => onDelete(text)} className="Icon Icon-delete">
+        <FaDeleteLeft />
       </span>
     </li>
   );
