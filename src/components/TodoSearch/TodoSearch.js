@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import "./TodoSearch.css";
+import { TodoContext } from "../TodoContext/TodoContext";
 
-export function TodoSearch({ setSeacrhValue, searcValue }) {
+export function TodoSearch() {
+  const { setSeacrhValue, searcValue } = useContext(TodoContext);
+
   return (
     <input
       placeholder="Search TODOs"
