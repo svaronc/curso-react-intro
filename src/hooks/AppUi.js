@@ -18,7 +18,7 @@ export function AppUi() {
     deleteTodo,
     searchedTodos,
     openModal,
-    setOpenModal,
+    setOpenModal
   } = useContext(TodoContext);
   return (
     <>
@@ -48,8 +48,8 @@ export function AppUi() {
           />
         ))}
       </TodoList>
-      <CreateTodoButton />
-      {openModal && <Modal></Modal>}
+      <CreateTodoButton setOpenModal ={setOpenModal}/>
+      {openModal && <Modal>Testinggg...</Modal>}
     </>
   );
 }
