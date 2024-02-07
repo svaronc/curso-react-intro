@@ -35,9 +35,7 @@ export function AppUi() {
         )}
         {error && <TodosError />}
         {!loading && searchedTodos.length === 0 && (
-          <p>
             <EmptyTodo />
-          </p>
         )}
         {searchedTodos.map((todo) => (
           <TodoItem

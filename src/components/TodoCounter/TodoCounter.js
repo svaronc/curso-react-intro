@@ -3,12 +3,12 @@ import "./TodoCounter.css";
 import { TodoContext } from "../TodoContext/TodoContext";
 
 export function TodoCounter() {
-  const { total, completed } = useContext(TodoContext);
-  return  total === completed ? (
+  const { totalTodos, completedTodos } = useContext(TodoContext);
+  return  totalTodos === completedTodos ? (
     <h1 className="TodoCounter">You have completed all your TODOs</h1>
   ) : (
     <h1 className="TodoCounter">
-     You have completed <span>{completed}</span> from <span>{total}</span> TODOS
+     You have completed <span>{completedTodos}</span> from <span>{totalTodos}</span> TODOS
     </h1>
   );
 }
