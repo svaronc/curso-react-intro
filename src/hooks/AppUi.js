@@ -9,6 +9,7 @@ import { EmptyTodo } from "../components/EmptyTodo/EmptyTodo.js";
 import { TodoContext } from "../components/TodoContext/TodoContext.js";
 import { useContext } from "react";
 import { Modal } from "../components/Modal/Modal.js";
+import { TodoForm } from "../components/TodoForm/TodoForm.js";
 
 export function AppUi() {
   const {
@@ -49,7 +50,7 @@ export function AppUi() {
         ))}
       </TodoList>
       <CreateTodoButton setOpenModal ={setOpenModal}/>
-      {openModal && <Modal>Testinggg...</Modal>}
+      {openModal && <Modal><TodoForm/></Modal>}
     </>
   );
 }
